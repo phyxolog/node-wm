@@ -1,0 +1,23 @@
+{
+  "name": "node-wm",
+  "version": "0.0.1",
+  "description": "Solution for create canvas watermark on NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phyxolog/node-wm.git"
+  },
+  "author": "Yura Zhivaga <yzhivaga@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phyxolog/node-wm/issues"
+  },
+  "homepage": "https://github.com/phyxolog/node-wm#readme",
+  "dependencies": {
+    "canvas": "^1.6.11",
+    "sharp": "^0.20.5"
+  }
+}
