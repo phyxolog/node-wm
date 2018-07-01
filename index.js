@@ -5,14 +5,14 @@ const Canvas = require("canvas");
  * Read file from disk and return image object.
  * 
  * @param {String} filePath Path to image
- * @returns {SharpInstance} Image object
+ * @returns {Sharp} Image object
  */
 const readImage = (filePath) => sharp(filePath);
 
 /**
  * Write a image object to disk.
  * 
- * @param {SharpInstance} image Image object
+ * @param {Sharp} image Image object
  * @param {String} filePath Path to save image
  */
 const writeImage = (image, filePath) => image.toFile(filePath);
@@ -20,7 +20,7 @@ const writeImage = (image, filePath) => image.toFile(filePath);
 /**
  * Get image dimensions (width and height).
  * 
- * @param {SharpInstance} image Image instance
+ * @param {Sharp} image Image object
  * @returns {Promise} Promise object represents the object format: { width, height }
  */
 const getImageDimensions = (image) => {
@@ -68,9 +68,10 @@ const createWatermark = (params) => {
 /**
  * Merge main image and our overlay.
  * 
- * @param {SharpInstance} image Image instance
+ * @param {Sharp} image Image object
  * @param {*} buffer Canvas buffer
  * @param {*} options Overlay options. For more details see documentation to Sharp.overlayWith
+ * @returns {Sharp}
  */
 const pasteOverlayToImage = (image, buffer, options) => {
   return image.overlayWith(buffer, options);
