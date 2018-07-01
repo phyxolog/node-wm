@@ -49,18 +49,18 @@ const createWatermark = (params) => {
   var textWidth;
   var canvas = new Canvas(params.width, params.height);
   var context = canvas.getContext("2d");
-  context.font = `${params.height / 8}px Arial`;
+  context.font = `${params.height / 24}px Arial`;
   context.beginPath();
-  context.fillStyle = "rgba(0, 0, 0, 1)";
+  context.fillStyle = "rgba(255, 255, 255, 1)";
 
   const measuredText = context.measureText(params.text);
   textWidth = measuredText.width;
 
-  context.shadowColor = "rgba(255, 255, 255, .54)";
+  context.shadowColor = "rgba(0, 0, 0, .86)";
   context.shadowBlur = 8;
   context.shadowOffsetX = 3;
-  context.shadowOffsetY = 3;  
-  context.fillText(params.text, (params.width / 2) - (textWidth / 2), (params.height / 2));
+  context.shadowOffsetY = 3;
+  context.fillText(params.text, params.width - textWidth - 20, params.height - 20);
 
   return canvas.toBuffer();
 };
@@ -77,7 +77,7 @@ const pasteOverlayToImage = (image, buffer, options) => {
   return image.overlayWith(buffer, options);
 };
 
-const image = readImage("./image2.jpg");
+const image = readImage("./image.jpg");
 
 getImageDimensions(image).then(({ width, height }) => {
   const params = { text: "my amesome watermark", width, height };
