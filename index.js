@@ -69,8 +69,8 @@ const createWatermark = (params) => {
  * Merge main image and our overlay.
  * 
  * @param {Sharp} image Image object
- * @param {*} buffer Canvas buffer
- * @param {*} options Overlay options. For more details see documentation to Sharp.overlayWith
+ * @param {Buffer} buffer Canvas buffer
+ * @param {Object} options Overlay options. For more details see documentation to Sharp.overlayWith
  * @returns {Sharp}
  */
 const pasteOverlayToImage = (image, buffer, options) => {
